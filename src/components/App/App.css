@@ -1,1 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:700|Pacifico');
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #FAFAFA;
+  color: #333;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+h1 {
+  margin: 5px;
+  text-align: center;
+  color: #22264b;
+  font-family: 'Pacifico', cursive;
+}
+
+* {
+  box-sizing: border-box;
+}

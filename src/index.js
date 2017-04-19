@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App/App';
+import AppContainer from './containers/AppContainer';
 import thunk  from 'redux-thunk'
 import './index.css';
 
@@ -19,7 +19,7 @@ const store = createStore(reducers, {}, enhancers)
 
 render(
   <Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>,
   document.getElementById('root')
 );

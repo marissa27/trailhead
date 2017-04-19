@@ -1,0 +1,40 @@
+header {
+  align-items: center;
+  justify-content: space-around;
+  padding: 1px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #FAFAFA;
+  border-bottom: 3px solid #D3D3D3;
+  display: flex;
+}
+
+.header-icon {
+  background-color: transparent;
+  border: none;
+}
+
+.settings-icon {
+  float: left;
+  background-image: url('images/settings-icon.svg');
+  width: 30px;
+  height: 29px;
+}
+
+.favorite-icon {
+  float: right;
+  background-image: url('images/favorite-icon.svg');
+  width: 32px;
+  height: 25px;
+}
+
+.settings-icon:active {
+  outline: none;
+  background-image: url('images/settings-icon-hover.svg');
+}
+
+.favorite-icon:active {
+  outline: none;
+  background-image: url('images/favorite-icon-hover.svg');
+}

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import users from './users'
+import hikes from './hikes'
 
 const reducers = combineReducers({
-  users
+  hikes
 })
 
 export default reducers;

@@ -1,14 +1,14 @@
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Users from '../components/Users/Users'
+import Card from '../components/Card/Card'
 
 const mapStateToProps = (state) => {
-  return { users: state.users }
+  return state
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(actions, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Users)
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
