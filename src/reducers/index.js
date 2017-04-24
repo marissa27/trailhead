@@ -1,8 +1,16 @@
 import { combineReducers } from 'redux';
+import {  routerReducer } from 'react-router-redux';
 import hikes from './hikes'
+import favorites from './favorites'
 
-const reducers = combineReducers({
-  hikes
+const appReducer = combineReducers({
+  hikes,
+  favorites,
+  router: routerReducer
 })
 
-export default reducers;
+const rootReducer = (state, action) => {
+  return appReducer(state, action)
+}
+
+export default rootReducer;

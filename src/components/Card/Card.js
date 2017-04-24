@@ -32,6 +32,9 @@ class Card extends Component {
     document.addEventListener('touchmove', this.onMove);
     document.addEventListener('touchend', this.onEnd);
 
+    document.addEventListener('onClick', this.onStart);
+    document.addEventListener('onClick', this.onEnd);
+
     document.addEventListener('mousedown', this.onStart);
     document.addEventListener('mousemove', this.onMove);
     document.addEventListener('mouseup', this.onEnd);
@@ -236,7 +239,10 @@ class Card extends Component {
                 <div className="buttons">
 
                   <button className="btn red rounded"></button>
-                  <button className="btn green rounded"></button>
+
+                  <button className="btn green rounded"
+                          onClick={(id) => this.props.handleClick(hike.id)}
+                          ></button>
 
                 </div>
 
@@ -258,8 +264,3 @@ class Card extends Component {
 
 export default Card;
 window.addEventListener('load', () => new Card());
-
-
-// <NavLink to="/hike">
-//   <button className="btn green rounded"></button>
-// </NavLink>
