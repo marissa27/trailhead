@@ -11,6 +11,7 @@ class Card extends Component {
     this.onMove = this.onMove.bind(this);
     this.onEnd = this.onEnd.bind(this);
     this.update = this.update.bind(this);
+    // size of element and position
     this.targetBCR = null;
     this.target = null;
     this.startX = 0;
@@ -226,7 +227,6 @@ class Card extends Component {
 
                 <img className="card-img" src={hike.image} alt={hike.title}/>
 
-
                   <p className="p-card">Length: <span className="p-info">{hike.distance}</span></p>
 
                   <p className="p-card">Difficulty Level: <span className="p-info">{hike.difficulty}</span></p>
@@ -239,7 +239,6 @@ class Card extends Component {
                   <button className="btn green rounded"></button>
 
                 </div>
-
 
             </div>
         )

@@ -5,6 +5,12 @@ export const receivedHikes = (hikes) => {
   }
 }
 
+// export const favoriteHikes = (hikes) => {
+//   return {
+//     type: 'ADD_FAVORITE',
+//     favorites
+//   }
+// }
 
 // API Calls
 export const fetchHikes = () => {
