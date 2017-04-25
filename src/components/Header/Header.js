@@ -1,18 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.css';
 
-const Header = () => {
+class Header extends Component {
 
-  return (
-    <header>
+makeCounter(favorites) {
+  if(favorites.length) {
+    return (
+      <NavLink to="/favorites">
+        <button className="favorite-icon-count header-icon"></button>
+      </NavLink>
+    )
+  } else {
+    return (
+      <NavLink to="/favorites">
+        <button className="favorite-icon header-icon"></button>
+      </NavLink>
+    )
+  }
+}
 
-          <button className="settings-icon header-icon"></button>
+  render() {
+    return (
+      <header>
 
-          <h1>TrailHead</h1>
-
-          <button className="favorite-icon header-icon"></button>
-    </header>
-  )
+        <Link to={'/'} className='title'>
+          <h1 className="title">TrailHead</h1>
+        </Link>
+        <div>
+          {this.makeCounter(this.props.favorites.length)}
+        </div>
+      </header>
+    )
+  }
 }
 
 export default Header;
+
+// <p className="counter">{this.props.favorites.length}</p>

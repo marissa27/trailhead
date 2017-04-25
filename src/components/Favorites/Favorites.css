@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:600,700');
+
+h2 {
+  text-align: center;
+}
+
+.favorite-container {
+  margin: 70px auto;
+  max-width: 450px;
+  width: 100%;
+}
+
+.fav-card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  background: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 20px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.fav-card:first-child {
+  margin-top: 0;
+}
+
+.favorite-img {
+  height: 100%;
+  width: 100px;
+  border: 1px solid #f9f9f9;
+  overflow: hidden;
+  vertical-align: top;
+  max-width: none;
+  max-height: 100%;
+}
+
+.p-favorite {
+  margin: 5px 2px 6px 3px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+}
+
+.p-info {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+}
+
+.backpack {
+  background-image: url('./images/backpack.svg');
+  width: 250px;
+  height: 250px;
+  margin: 20px auto;
+}
+
+.right {
+  width: 235px;
+}
+
+.fav-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.remove,
+.more {
+  color: white;
+  border: 2px solid #fff;
+  width: 80px;
+  height: 50px;
+}
+
+.remove {
+  background-color: #f5403c;
+}
+
+.more {
+  background-color: #2daaa7;
+}
