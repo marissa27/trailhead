@@ -1,7 +1,5 @@
-const favorites = (state=[], action) => {
+const remove = (state=[], action) => {
   switch (action.type) {
-    case 'ADD_FAVORITE':
-      return action.favorites
     case 'REMOVE_FAVORITE':
       return state.filter(value => value !== action.id)
     default:
@@ -9,4 +7,4 @@ const favorites = (state=[], action) => {
   }
 }
 
-export default favorites;
+export default remove;

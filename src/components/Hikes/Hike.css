@@ -1,0 +1,21 @@
+h3 {
+  text-transform: uppercase;
+  color: #f5403c;
+  margin-top: 35px;
+}
+
+h3:first {
+  margin-top: 20px;
+}
+
+.hike {
+  margin-top: 70px;
+}
+
+.hike-img {
+  width: 100%;
+}
+
+.hike-info {
+  padding: 0 15px;
+}

@@ -12,6 +12,13 @@ export const favoriteHikes = (favorites) => {
   }
 }
 
+export const removeHike = (id) => {
+  return {
+    type: 'REMOVE_FAVORITE',
+    id
+  }
+}
+
 // API Calls
 export const fetchHikes = () => {
   return dispatch => {

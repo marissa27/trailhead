@@ -1,13 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script');
+
 header {
   align-items: center;
-  justify-content: space-around;
-  padding: 1px;
+  justify-content: space-between;
+  padding: 1px 30px;
   position: fixed;
   top: 0;
   width: 100%;
   background-color: #FAFAFA;
   border-bottom: 3px solid #D3D3D3;
   display: flex;
+}
+
+h1 {
+  font-family: 'Oleo Script', cursive;
+}
+
+.title {
+  text-decoration: none;
 }
 
 .header-icon {
@@ -25,8 +35,8 @@ header {
 .favorite-icon {
   float: right;
   background-image: url('images/favorite-icon.svg');
-  width: 32px;
-  height: 25px;
+  width: 35px;
+  height: 27px;
 }
 
 .settings-icon:active {
@@ -37,4 +47,19 @@ header {
 .favorite-icon:active {
   outline: none;
   background-image: url('images/favorite-icon-hover.svg');
+}
+
+/*.counter {
+  margin: 0;
+  position: absolute;
+  right: 44px;
+  top: 21px;
+  color: #fff;
+}*/
+
+.favorite-icon-count {
+  float: right;
+  background-image: url('images/favorite-icon-count.svg');
+  width: 32px;
+  height: 25px;
 }

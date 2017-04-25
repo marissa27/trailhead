@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 // import Hikes from '../../containers/HikeContainer';
-import Header from '../Header/Header';
+import Hikes from '../Hikes/Hikes';
+import Header from '../../containers/HeaderContainer';
 import Card from '../../containers/CardContainer';
-import Favorites from '../Favorites/Favorites';
+import Favorites from '../../containers/FavoritesContainer';
 
 class App extends Component {
   constructor() {
@@ -14,16 +15,25 @@ class App extends Component {
     }
   }
 
-  addFavorite(id) {
-    if (!this.state.favorites.includes(id)) {
-      this.state.favorites.push(id);
+  addFavorite(hike) {
+    if (!this.state.favorites.includes(hike)) {
+      this.state.favorites.push(hike);
     }
-
       this.setState({ favorites: this.state.favorites })
       this.props.favoriteHikes(this.state.favorites);
+      this.removeHike(hike)
+    }
+
+    removeHike(hike) {
+      const index = this.props.hikes.indexOf(hike);
+
+      if (index > -1) {
+          this.props.hikes.splice(index, 1);
+      }
     }
 
   render() {
+    const { favorites } = this.props
 
     return (
         <div className="App">
@@ -31,7 +41,8 @@ class App extends Component {
 
           <Route exact path="/"
                  render={({match}) =>
-                 <Card handleClick={(id) => this.addFavorite(id)} />
+                 <Card handleClick={(hike) => this.addFavorite(hike)}
+                       handleRemove={(hike) => this.removeHike(hike)} />
           } />
 
           <Route
@@ -39,34 +50,15 @@ class App extends Component {
             component={ Favorites }
           />
 
+        <Route exact path='/hike/:id' render={({match}) => {
+              const hike = favorites.find(hike => hike.id === parseInt(match.params.id, 10))
+              return <Hikes { ...hike } history={ history } />
+            }
+          } />
+
         </div>
     );
   }
 }
 
 export default App;
-
-// <Route path="/hikes" component={ Card }></Route>
-//
-// <Route path='/hikes/:id' render={ ({ match }) => {
-//     const hike = hikes.find(hike => hikes.id === parseInt(match.params.id, 0))
-//     return <Hikes hike={hike} history={ history } />
-//   }}>
-// // </Route>
-
-//
-//   addFav( e, id ) {
-//
-//     !this.state.favorites.includes(id) ? this.state.favorites.push(id) :   this.state.favorites.splice(this.state.favorites.indexOf(id), 1 );
-//
-//     if (this.state.favorites.includes(id)) {
-//       change icon image
-// e. target.closest('.card').style
-//     } else if (!this.state.favorites.includes(id)) {
-//       e.target.innerText = "Favorite"
-//       e.target.style.backgroundColor = "inherit"
-//     }
-//
-//     this.setState({ favorites: this.state.favorites })
-//     this.props.saveFav(this.state.favorites);
-//   }
